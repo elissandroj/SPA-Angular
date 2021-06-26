@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col">
+      <mat-card>
+        <h2>Alunos</h2>
+        <app-controller type="Alunos" [quantidade]="alunos.length" (newItemEvent)="addItemAlunos($event)" (listEvent)="listAlunos($event)"></app-controller>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card>
+        <h2>Professores</h2>
+        <app-controller type="Professores" [quantidade]="professores.length" (newItemEvent)="addItemProfessores($event)" (listEvent)="listProfessores($event)"></app-controller>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="row mt-2" *ngIf="listar">
+    <div class="col">
+      <mat-card><app-lista [dataSource]="lista"></app-lista></mat-card>
+    </div>
+  </div>
+</div>

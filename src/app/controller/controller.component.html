@@ -1,0 +1,45 @@
+<span *ngIf="!cadastro">
+  <h3 class="text-center">Quantidade de {{type}}: {{quantidade}}
+  </h3>
+  <div class="row d-flex justify-content-around mt-2">
+    <button class="col-5" mat-raised-button color="primary" (click)="setCadastro()">Cadastrar</button>
+    <button class="col-5" mat-raised-button color="warn" (click)="list()">Ver Lista</button>
+  </div>
+</span>
+
+<span *ngIf="cadastro">
+  <div class="row">
+    <div class="col-7">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="pessoa.nome">
+      </mat-form-field>
+    </div>
+    <div class="col-5">
+      <mat-form-field class="example-full-width">
+        <mat-label>Idade</mat-label>
+        <input matInput type="number" [(ngModel)]="pessoa.idade">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <mat-form-field class="example-full-width">
+        <mat-label>email</mat-label>
+        <input matInput type="email" [(ngModel)]="pessoa.email">
+      </mat-form-field>
+    </div>
+    <div class="col-5">
+      <mat-form-field class="example-full-width">
+        <mat-label>Curso</mat-label>
+        <input matInput [(ngModel)]="pessoa.curso">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-end mt-2 save">
+    <button class="col-3" mat-raised-button color="primary" (click)="addNewItem()">Salvar</button>
+    <button class="col-3" mat-raised-button color="warn" (click)="setCadastro()">Voltar</button>
+  </div>
+</span>
